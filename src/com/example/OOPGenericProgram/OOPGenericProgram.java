@@ -5,6 +5,7 @@ public class OOPGenericProgram {
         System.out.println("welcome to generic program");
         intergerMax(4,2,6);
         floatMax(1.2f,4.5f,6.8f);
+        stringMax("interger","float","string");
     }
     //calling integerMax static method and passing the parameter
 
@@ -34,6 +35,20 @@ public class OOPGenericProgram {
         if(c.compareTo(max)>0){
          max = c;
         }
-        System.out.print("flot max"+max);
+        System.out.println("flot max"+max);
+    }
+    /*
+   * StringMax method to compute max string
+   * compareto method use to compare the three string
+     */
+    public static void stringMax(String a, String b, String c){
+        String max = a;
+        if(b.compareTo(max)>0){
+            max = b;
+        }
+        if(c.compareTo(max)>0){
+            max = c;
+        }
+        System.out.println("string max"+max);
     }
 }
