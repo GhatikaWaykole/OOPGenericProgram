@@ -1,6 +1,17 @@
 package com.example.OOPGenericProgram;
 
-public class OOPGenericProgram {
+public class OOPGenericProgram <E extends Comparable<E>>{
+    E a,b,c;
+    /*
+    * constructor point to the a, b ,c
+    * constructor take paramter any type of data
+     */
+    public OOPGenericProgram(E a, E b, E c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+
     public static void main(String args[]) {
         System.out.println("welcome to generic program");
         compare(4,2,6);
