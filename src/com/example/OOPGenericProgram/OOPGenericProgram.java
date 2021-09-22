@@ -1,22 +1,23 @@
 package com.example.OOPGenericProgram;
 
+import java.util.Arrays;
+
 public class OOPGenericProgram <E extends Comparable<E>>{
-    E a,b,c;
+    E[] element;
+    E result;
     /*
     * constructor point to the a, b ,c
     * constructor take paramter any type of data
      */
-    public OOPGenericProgram(E a, E b, E c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
+
+    public OOPGenericProgram(E[] element) {
+        this.element = element;
     }
 
     public static void main(String args[]) {
         System.out.println("welcome to generic program");
-        compare(4,2,6);
-        System.out.println("float max number" + compare(1.2f,4.2f,6.8f));
-        System.out.println("string max"+compare("interger","float","string"));
+        Integer[] a = {1, 2, 3};
+        compare(a);
     }
     //calling integerMax static method and passing the parameter
 
@@ -24,14 +25,11 @@ public class OOPGenericProgram <E extends Comparable<E>>{
      * generic type method to compare any type of data
      * @param a, b ,c and compareTo method to find the max number
      */
-    public static <E extends Comparable<E>> E compare(E a, E b, E c){
-        E max = a;
-        if(b.compareTo(max)>0){
-            max = b;
-        }
-        if(c.compareTo(max)>0){
-            max = c;
-        }
+    public static <E extends Comparable<E>> E compare(E[] element){
+        Arrays.sort(element);
+        int length = element.length;
+        E max = element[length -1];
+        System.out.println("max"+max);                  //std to give the max value
         return max;
 
     }
